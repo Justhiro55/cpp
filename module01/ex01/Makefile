@@ -6,7 +6,7 @@
 #    By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:05:10 by hhagiwar          #+#    #+#              #
-#    Updated: 2023/12/27 09:35:30 by hhagiwar         ###   ########.fr        #
+#    Updated: 2023/12/27 11:02:30 by hhagiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp \
 	  Zombie.cpp \
-	  newZombie.cpp \
-	  randomChump.cpp
+	  zombieHorde.cpp
 
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))

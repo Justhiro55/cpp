@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 09:36:51 by hhagiwar         ###   ########.fr       */
+/*   Created: 2023/12/26 17:28:17 by hhagiwar          #+#    #+#             */
+/*   Updated: 2023/12/27 16:10:53 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+// HumanB.hpp
+#ifndef HumanB_HPP
+#define HumanB_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-    Zombie stack("stack1");
-    Zombie *heap = newZombie("heap");
+public:
+    HumanB(std::string name);
+    ~HumanB();
+    void attack() const;
+    void setWeapon(Weapon &weapon);
 
-    randomChump("stack2");
-    stack.announce();
-    heap->announce();
-    delete heap;
-    return 0;
-}
+private:
+    std::string _name;
+    Weapon *_weapon;
+};
+
+#endif

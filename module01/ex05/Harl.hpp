@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 09:36:51 by hhagiwar         ###   ########.fr       */
+/*   Created: 2023/12/26 17:28:17 by hhagiwar          #+#    #+#             */
+/*   Updated: 2023/12/27 18:32:40 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+// Harl.hpp
+#ifndef Harl_HPP
+#define Harl_HPP
 
-int main()
+#include <iostream>
+
+class Harl
 {
-    Zombie stack("stack1");
-    Zombie *heap = newZombie("heap");
+public:
+    void complain(std::string level);
 
-    randomChump("stack2");
-    stack.announce();
-    heap->announce();
-    delete heap;
-    return 0;
-}
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+};
+
+#endif
