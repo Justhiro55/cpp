@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 09:36:51 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:21:33 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main()
 {
-    Zombie stack("stack1");
-    Zombie *heap = newZombie("heap");
+    randomChump("Chump");
+    Zombie zombie1("zombie1");
+    zombie1.announce();
+    Zombie *zombie2 = newZombie("zombie2");
+    zombie2->announce();
 
-    randomChump("stack2");
-    stack.announce();
-    heap->announce();
-    delete heap;
+    delete zombie2;
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 15:29:05 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:30:14 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     std::string str = "HI THIS IS BRAIN";
     std::string *stringPTR = &str;
-    std::string stringREF = str;
+    std::string &stringREF = str;
 
     std::cout << "\033[36mThe memory address\033[0m" << std::endl;
     std::cout << "strinf variable:  " << &str << std::endl;

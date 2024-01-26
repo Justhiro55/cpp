@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:14:52 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 19:37:53 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:49:28 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-    void (Harl::*FuncPtrArray[4])(void) = {
+    void (Harl::*FuncPtr[4])(void) = {
         &Harl::debug,
         &Harl::info,
         &Harl::warning,
@@ -48,16 +48,16 @@ void Harl::complain(std::string level)
     switch (allLevel.find(level))
     {
     case 0:
-        (this->*FuncPtrArray[0])();
+        (this->*FuncPtr[0])();
         break;
     case 6:
-        (this->*FuncPtrArray[1])();
+        (this->*FuncPtr[1])();
         break;
     case 11:
-        (this->*FuncPtrArray[2])();
+        (this->*FuncPtr[2])();
         break;
     case 19:
-        (this->*FuncPtrArray[3])();
+        (this->*FuncPtr[3])();
         break;
     default:
         break;

@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:28:17 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 14:56:11 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:31:13 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Weapon();
     Weapon(std::string);
     ~Weapon();
-    std::string getType() const;
+    const std::string &getType() const;
     void setType(std::string type);
 
 private:
