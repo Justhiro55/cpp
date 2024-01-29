@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 18:13:42 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/06 13:54:06 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ int err_msg()
 
 int main(int argc, char **argv)
 {
+    if (argc != 4)
+        return (err_msg());
     std::string filename = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
     size_t num = 0;
     std::string line;
 
-    if (argc != 4 || s2.find(s1) != std::string::npos || s1 == "")
+    if (s2.find(s1) != std::string::npos || s1 == "")
         return (err_msg());
     std::ifstream ifs(filename);
     if (ifs.fail() || strlen(argv[1]) < 1)

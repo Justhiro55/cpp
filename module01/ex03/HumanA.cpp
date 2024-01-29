@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 16:09:54 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:21:29 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon)
 {
-    this->_weapon = weapon;
     this->_name = name;
 }
 

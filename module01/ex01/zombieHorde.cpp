@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 10:38:44 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 17:00:37 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/28 17:07:58 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Zombie *zombieHorde(int N, std::string name)
 {
+    if( N < 1 )
+    {
+        std::cout << "Error" << std::endl;
+        return NULL;
+    }
     Zombie *horde = new Zombie[N];
     for (int i = 0; i < N; i++)
     {

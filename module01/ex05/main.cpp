@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:31:22 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/27 18:26:24 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:35:58 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 int main()
 {
-    Harl h;
+    Harl harl;
 
-    h.complain("DEBUG");
-    h.complain("INFO");
-    h.complain("WARNING");
-    h.complain("ERROR");
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
     return 0;
 }
 
