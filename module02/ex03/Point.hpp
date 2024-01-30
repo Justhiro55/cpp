@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 13:57:11 by hhagiwar          #+#    #+#             */
-/*   Updated: 2024/01/22 20:32:21 by hhagiwar         ###   ########.fr       */
+/*   Created: 2024/01/29 15:41:12 by hhagiwar          #+#    #+#             */
+/*   Updated: 2024/01/29 17:41:29 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
-#include <iostream>
-#include <string>
+// Point.hpp
 
-int	main(int argc, char **argv)
+#ifndef POINT_HPP
+#define POINT_HPP
+
+#include <iostream>
+#include <cmath>
+#include "Fixed.hpp"
+
+class Point
 {
-	if (argc < 2 || (argv[1] && argv[1][0] == '\0'))
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	}
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			std::string str = argv[i];
-			for (size_t j = 0; j < str.size(); j++)
-			{
-				std::cout << char(std::toupper(str[j]));
-			}
-			std::cout << " ";
-		}
-		std::cout << std::endl;
-	}
-}
+public:
+    Point();
+    Point(float num1, float num2);
+    Point(const Point &obj);
+    ~Point();
+    
+    Point &operator=(const Point &obj);
+
+    Fixed getX() const;
+    Fixed getY() const;
+
+private:
+    Fixed const x;
+    Fixed const y;
+};
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
+
+#endif

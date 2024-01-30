@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:06:45 by hhagiwar          #+#    #+#             */
-/*   Updated: 2023/12/26 16:31:28 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/01/22 20:36:18 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	PhoneBook::SEARCH(void)
 
 void 	Contact::copy_contacts(Contact contact)
 {
-	std::cout << "contacts.name:" << firstname << "contacts.name" << contact.lastname << std::endl;
 	lastname = contact.lastname;
 	firstname = contact.firstname;
 	number = contact.firstname;
