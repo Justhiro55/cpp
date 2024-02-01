@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 13:59:28 by hhagiwar          #+#    #+#             */
-/*   Updated: 2024/01/29 17:15:10 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:39:06 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ Fixed& Fixed::operator=(const Fixed &obj)
 bool Fixed::operator==(const Fixed &obj) const
 {
     return (this->getRawBits() == obj.getRawBits());
+}
+
+bool Fixed::operator!=(const Fixed &obj) const
+{
+    return (this->getRawBits() != obj.getRawBits());
 }
 
 bool Fixed::operator>(const Fixed &obj) const
@@ -122,8 +127,10 @@ Fixed &Fixed::operator--(void)
 
 Fixed Fixed::operator--(int)
 {
+    const Fixed tmp(*this);
+
     this->value--;
-    return (*this);
+    return (tmp);
 }
 
 const Fixed &Fixed::max(const Fixed &obj1, const Fixed &obj2)

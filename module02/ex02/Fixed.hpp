@@ -6,7 +6,7 @@
 /*   By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 13:59:26 by hhagiwar          #+#    #+#             */
-/*   Updated: 2024/01/29 17:16:07 by hhagiwar         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:39:03 by hhagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
     Fixed &operator=(const Fixed &obj);
 
     bool operator==(const Fixed &obj) const;
+    bool operator!=(const Fixed &obj) const;
     bool operator>(const Fixed &obj) const;
     bool operator<(const Fixed &obj) const;
     bool operator>=(const Fixed &obj) const;

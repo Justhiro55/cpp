@@ -6,12 +6,12 @@
 #    By: hhagiwar <hhagiwar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/26 17:05:10 by hhagiwar          #+#    #+#              #
-#    Updated: 2024/01/29 16:52:04 by hhagiwar         ###   ########.fr        #
+#    Updated: 2024/02/01 11:37:43 by hhagiwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
-CC = g++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp \
 	  bsp.cpp \
