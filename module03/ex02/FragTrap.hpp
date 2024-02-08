@@ -4,12 +4,14 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : ClapTrap
+class FragTrap : public ClapTrap
 {
     public:
         FragTrap();
         FragTrap(std::string name);
-        ~FragTrap();
+    	FragTrap(const FragTrap& obj);
+        virtual ~FragTrap();
+        FragTrap &operator=(const FragTrap &obj);
         void highFivesGuys(void);
     private:
 };
