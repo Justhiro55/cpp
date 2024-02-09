@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("default"), _hitPoint(10), _energyPoint(10), _attackDamage(10)
+ClapTrap::ClapTrap() : _name("default"), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
     std::cout << "ClapTrap " << this->_name << " Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(10)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
     std::cout << "ClapTrap " << this->_name << " Constructor called" << std::endl;
 }
@@ -57,7 +57,7 @@ void ClapTrap::takeDamage(unsigned int amount)
               << " has taken " << amount << " damage"
               << std::endl;
     if (this->_hitPoint == 0)
-        std::cout << "ClapTrap " << this->_name << " is died" << std::endl;
+        std::cout << "ClapTrap " << this->_name << " died" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
