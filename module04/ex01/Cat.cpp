@@ -23,6 +23,7 @@ Cat::Cat(const Cat &obj)
 Cat::~Cat()
 {
     std::cout << "Cat Destructor called" << std::endl;
+    delete this->brain;
 }
 
 Cat& Cat::operator=(const Cat &obj)
@@ -46,5 +47,5 @@ std::string Cat::getBrainIdea(int index) const
 
 void Cat::setBrainIdea(int index, const std::string& idea) 
 {
-    brain->setIdea(index, idea);
+    brain->setIdea(idea, index);
 }
