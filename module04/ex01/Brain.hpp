@@ -7,15 +7,14 @@ class Brain
 {
     public:
         Brain();
-        Brain(Brain &obj);
     	Brain(const Brain& obj);
-        virtual ~Brain();
+        ~Brain();
         Brain &operator=(const Brain &obj);
-        Brain *getBrain() const;
-        void setBrain(std::string idea, int index);
+        std::string getIdea(unsigned int index) const;
+        void setIdea(std::string idea, unsigned int index);
 
     private:
-        std::string _ideas[100];
+        std::string *_ideas;
 };
 
 #endif

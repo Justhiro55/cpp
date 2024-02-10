@@ -3,7 +3,7 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), brain(new Brain())
 {
     std::cout << "Dog Constructor called" << std::endl;
 }
@@ -24,6 +24,7 @@ Dog::Dog(const Dog &obj)
 Dog::~Dog()
 {
     std::cout << "Dog Destructor called" << std::endl;
+    delete this->brain;
 }
 
 Dog& Dog::operator=(const Dog &obj)
@@ -47,5 +48,5 @@ std::string Dog::getBrainIdea(int index) const
 
 void Dog::setBrainIdea(int index, const std::string& idea) 
 {
-    brain->setIdea(index, idea);
+    brain->setIdea((std::string)idea, index);
 }
