@@ -17,7 +17,7 @@ Dog::Dog(const Dog &obj)
 {
     if(this == &obj)
         return;
-    this->_type = obj._type;
+    this->brain = new Brain(*(obj.brain));
     std::cout << "Dog Constructor called" << std::endl;
 }
 
@@ -32,6 +32,8 @@ Dog& Dog::operator=(const Dog &obj)
     if(this != &obj)
     {
         this->_type = obj._type;
+        delete this->brain;
+        this->brain = new Brain(*(obj.brain));
     }
     return *this;
 }
@@ -48,5 +50,12 @@ std::string Dog::getBrainIdea(int index) const
 
 void Dog::setBrainIdea(int index, const std::string& idea) 
 {
-    brain->setIdea((std::string)idea, index);
+	// for (int i = 0; i < 100; i++) {
+	// 	if (this->brain->getIdea(i) == "") {
+	// 		this->brain->setIdea(idea, i);
+	// 		return;
+	// 	}
+	// }
+	this->brain->setIdea(idea, index);
+	std::cout << "Brain of cat is full!" << std::endl;
 }

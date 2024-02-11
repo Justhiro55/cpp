@@ -5,12 +5,35 @@
 
 int main() {
     // Dog と Cat のオブジェクトを作成
+    Animal *meta[10];
+
+    std::cout << CYAN << "[array test]" << RESET << std::endl;
+    for (int i = 0; i < 10; i++)
+    {
+        if(i < 5)
+            meta[i] = new Dog();
+        else
+            meta[i] = new Cat();
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i < 10; i++)
+        delete meta[i];
+    std::cout << std::endl;
+
+    std::cout << CYAN << "[brain test]" << RESET << std::endl;
     Dog* dog1 = new Dog();
     Cat* cat1 = new Cat();
 
+    dog1->setBrainIdea(0, "Dog1's new idea");
+    cat1->setBrainIdea(0, "Cat1's new idea");
+
     // 初期状態のアイデアを表示
+    std::cout << std::endl;
+    std::cout << "Dog1's second idea: " << dog1->getBrainIdea(1) << std::endl;
     std::cout << "Dog1's first idea: " << dog1->getBrainIdea(0) << std::endl;
     std::cout << "Cat1's first idea: " << cat1->getBrainIdea(0) << std::endl;
+    std::cout << std::endl;
 
     // Dog と Cat のオブジェクトのコピーを作成
     Dog* dog2 = new Dog(*dog1);
@@ -19,6 +42,7 @@ int main() {
     // コピーされたオブジェクトのアイデアを変更
     dog2->setBrainIdea(0, "Dog2's new idea");
     cat2->setBrainIdea(0, "Cat2's new idea");
+    std::cout << std::endl;
 
     // 元のオブジェクトとコピーされたオブジェクトのアイデアを表示して、深いコピーを確認
     std::cout << "After modification:" << std::endl;
@@ -35,7 +59,6 @@ int main() {
 
     return 0;
 }
-
 
 // __attribute__((destructor)) static void destructor()
 // {
