@@ -2,14 +2,18 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat()
 {
     std::cout << "Cat Constructor called" << std::endl;
+	this->_type = "Cat";
+	this->brain = new Brain();
 }
 
-Cat::Cat(std::string type) : Animal(type)
+Cat::Cat(std::string type)
 {
     std::cout << "Cat Constructor called" << std::endl;
+	this->_type = type;
+	this->brain = new Brain();
 }
 
 Cat::Cat(const Cat &obj)
@@ -17,6 +21,7 @@ Cat::Cat(const Cat &obj)
     if(this == &obj)
         return;
     this->_type = obj._type;
+	this->brain = new Brain(*obj.brain);
     std::cout << "Cat Constructor called" << std::endl;
 }
 
@@ -30,7 +35,9 @@ Cat& Cat::operator=(const Cat &obj)
 {
     if(this != &obj)
     {
-        this->_type = obj._type;
+        Animal::operator=(obj);
+        delete this->brain;
+        this->brain = new Brain(*(obj.brain));
     }
     return *this;
 }
@@ -47,5 +54,12 @@ std::string Cat::getBrainIdea(int index) const
 
 void Cat::setBrainIdea(int index, const std::string& idea) 
 {
-    brain->setIdea(idea, index);
+	// for (int i = 0; i < 100; i++) {
+	// 	if (this->brain->getIdea(i) == "") {
+	// 		this->brain->setIdea(idea, i);
+	// 		return;
+	// 	}
+	// }
+	this->brain->setIdea(idea, index);
+	// std::cout << "Brain of cat is full!" << std::endl;
 }

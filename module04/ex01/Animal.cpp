@@ -14,7 +14,7 @@ Animal::Animal(const Animal &obj)
 {
     if (this == &obj)
         return;
-    *this = obj;
+    this->_type = obj._type;
     std::cout << "Animal Constructor called" << std::endl;
 }
 

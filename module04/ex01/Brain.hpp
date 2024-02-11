@@ -9,7 +9,7 @@ class Brain
         Brain();
     	Brain(const Brain& obj);
         ~Brain();
-        Brain &operator=(const Brain &obj);
+        Brain &operator=(Brain &obj);
         std::string getIdea(unsigned int index) const;
         void setIdea(std::string idea, unsigned int index);
 
