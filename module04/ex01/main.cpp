@@ -4,63 +4,78 @@
 #include <iostream>
 
 int main() {
-    // Dog と Cat のオブジェクトを作成
-    Animal *meta[10];
+    Animal* animals[10];
 
-    std::cout << CYAN << "[array test]" << RESET << std::endl;
-    for (int i = 0; i < 10; i++)
-    {
-        if(i < 5)
-            meta[i] = new Dog();
+    std::cout << CYAN << "<<array test>>" << RESET << std::endl;
+    std::cout << "Creating animals..." << std::endl;
+    for (int i = 0; i < 10; i++) {
+        if (i < 5)
+            animals[i] = new Dog();
         else
-            meta[i] = new Cat();
+            animals[i] = new Cat();
     }
+
     std::cout << std::endl;
+    std::cout << "makesound" << std::endl;
+    for (int i = 0; i < 10; i++) {
+        animals[i]->makeSound();
+    }
 
-    for (int i = 0; i < 10; i++)
-        delete meta[i];
     std::cout << std::endl;
+    std::cout << "Deleting animals..." << std::endl;
+    for (int i = 0; i < 10; i++) {
+        delete animals[i];
+    }
 
-    std::cout << CYAN << "[brain test]" << RESET << std::endl;
-    Dog* dog1 = new Dog();
-    Cat* cat1 = new Cat();
-
-    dog1->setBrainIdea(0, "Dog1's new idea");
-    cat1->setBrainIdea(0, "Cat1's new idea");
-
-    // 初期状態のアイデアを表示
     std::cout << std::endl;
-    std::cout << "Dog1's second idea: " << dog1->getBrainIdea(1) << std::endl;
-    std::cout << "Dog1's first idea: " << dog1->getBrainIdea(0) << std::endl;
-    std::cout << "Cat1's first idea: " << cat1->getBrainIdea(0) << std::endl;
+    std::cout << CYAN << "<<Deep copy test>>" << RESET << std::endl;
+    Dog* originalDog = new Dog();
+    originalDog->setBrainIdea(0, "Original Dog's Idea");
+
+    Dog* copyDog = new Dog(*originalDog);
+    copyDog->setBrainIdea(0, "Copy Dog's Idea");
+
+    Cat* originalCat = new Cat();
+    originalCat->setBrainIdea(0, "Original Cat's Idea");
+
+    Cat* copyCat = new Cat(*originalCat);
+    copyCat->setBrainIdea(0, "Copy Cat's Idea");
+
     std::cout << std::endl;
+    std::cout << "test output" << std::endl;
+    std::cout << "Original Dog's Idea: " << originalDog->getBrainIdea(0) << std::endl;
+    std::cout << "Copy Dog's Idea    : " << copyDog->getBrainIdea(0) << std::endl;
+    std::cout << "Original Cat's Idea: " << originalCat->getBrainIdea(0) << std::endl;
+    std::cout << "Copy Cat's Idea    : " << copyCat->getBrainIdea(0) << std::endl;
 
-    // Dog と Cat のオブジェクトのコピーを作成
-    Dog* dog2 = new Dog(*dog1);
-    Cat* cat2 = new Cat(*cat1);
+    delete originalDog;
+    delete copyDog;
+    delete originalCat;
+    delete copyCat;
 
-    // コピーされたオブジェクトのアイデアを変更
-    dog2->setBrainIdea(0, "Dog2's new idea");
-    cat2->setBrainIdea(0, "Cat2's new idea");
+    std::cout << CYAN << "<<error handling>>" << RESET << std::endl;
+    Dog dog;
+    Cat cat;
+
     std::cout << std::endl;
+    std::cout << "Testing invalid index access:" << std::endl;
+    dog.setBrainIdea(100, "Dog's invalid idea");
+    dog.setBrainIdea(-100, "Dog's invalid idea");
+    std::cout << "Dog's Idea at 100: " << dog.getBrainIdea(100);
+    std::cout << "Dog's Idea at 99: " << dog.getBrainIdea(99);
 
-    // 元のオブジェクトとコピーされたオブジェクトのアイデアを表示して、深いコピーを確認
-    std::cout << "After modification:" << std::endl;
-    std::cout << "Dog1's first idea: " << dog1->getBrainIdea(0) << std::endl;
-    std::cout << "Dog2's first idea: " << dog2->getBrainIdea(0) << std::endl;
-    std::cout << "Cat1's first idea: " << cat1->getBrainIdea(0) << std::endl;
-    std::cout << "Cat2's first idea: " << cat2->getBrainIdea(0) << std::endl;
 
-    // オブジェクトの削除
-    delete dog1;
-    delete dog2;
-    delete cat1;
-    delete cat2;
+    cat.setBrainIdea(100, "Cat's invalid idea");
+    dog.setBrainIdea(-100, "Dog's invalid idea");
+    std::cout << "Cat's Idea at 100: " << cat.getBrainIdea(100);
+    std::cout << "Cat's Idea at 99: " << cat.getBrainIdea(99);
 
+    std::cout << std::endl;
+    std::cout << std::endl;
     return 0;
 }
 
 // __attribute__((destructor)) static void destructor()
 // {
-// 	system("leaks -q out");
+// 	system("leaks -q a.out");
 // }

@@ -7,17 +7,12 @@ Dog::Dog() : Animal("Dog")
     std::cout << "Dog Constructor called" << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal(type)
-{
-    std::cout << "Dog Constructor called" << std::endl;
-}
-
 Dog::Dog(const Dog &obj)
 {
     if(this == &obj)
         return;
     this->_type = obj._type;
-    std::cout << "Dog Constructor called" << std::endl;
+    std::cout << "Dog Copy Constructor called" << std::endl;
 }
 
 Dog::~Dog()
