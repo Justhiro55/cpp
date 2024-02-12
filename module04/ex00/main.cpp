@@ -32,5 +32,5 @@ int main() {
 
 // __attribute__((destructor)) static void destructor()
 // {
-// 	system("leaks -q out");
+// 	system("leaks -q a.out");
 // }
