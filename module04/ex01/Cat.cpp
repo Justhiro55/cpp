@@ -4,7 +4,7 @@
 
 Cat::Cat()
 {
-    std::cout << "Cat Constructor called" << std::endl;
+    std::cout << GREEN << "Cat Constructor called" << RESET << std::endl;
 	this->_type = "Cat";
 	this->brain = new Brain();
 }
@@ -15,12 +15,12 @@ Cat::Cat(const Cat &obj)
         return;
     this->_type = obj._type;
 	this->brain = new Brain(*obj.brain);
-    std::cout << "Cat Copy Constructor called" << std::endl;
+    std::cout << GREEN << "Cat Copy Constructor called" << RESET << std::endl;
 }
 
 Cat::~Cat()
 {
-    std::cout << "Cat Destructor called" << std::endl;
+    std::cout << GREEN << "Cat Destructor called" << RESET << std::endl;
     delete this->brain;
 }
 
@@ -37,7 +37,7 @@ Cat& Cat::operator=(const Cat &obj)
 
 void Cat::makeSound() const
 {
-    std::cout << "meow" << std::endl;
+    std::cout << GREEN << "meow" << RESET << std::endl;
 }
 
 std::string Cat::getBrainIdea(unsigned int index) const 
@@ -54,7 +54,7 @@ void Cat::setBrainIdea(unsigned int index, const std::string& idea)
 {
     if(index > 99)
     {
-        std::cout << "index out of range" << std::endl;
+        std::cout << "index out of range" <<std::endl;
         return;
     }
 	this->brain->setIdea(idea, index);

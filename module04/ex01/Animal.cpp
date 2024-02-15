@@ -2,12 +2,12 @@
 
 Animal::Animal()
 {
-    std::cout << "Animal Constructor called" << std::endl;
+    std::cout << YELLOW << "Animal Constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
-    std::cout << type << " Constructor called" << std::endl;
+    std::cout << YELLOW << "Animal Constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &obj)
@@ -15,12 +15,12 @@ Animal::Animal(const Animal &obj)
     if (this == &obj)
         return;
     this->_type = obj._type;
-    std::cout << "Animal Copy Constructor called" << std::endl;
+    std::cout << YELLOW << "Animal Copy Constructor called" << RESET << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Animal Destructor called" << std::endl;
+    std::cout << YELLOW << "Animal Destructor called" << RESET << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &obj)
@@ -44,5 +44,5 @@ void Animal::setType(std::string type)
 
 void Animal::makeSound() const
 {
-    std::cout << "(nothing...)" << std::endl;
+    std::cout << YELLOW << "(nothing...)" << RESET << std::endl;
 }

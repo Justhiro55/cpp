@@ -5,7 +5,7 @@
 
 Dog::Dog() : Animal("Dog"), brain(new Brain())
 {
-    std::cout << "Dog Constructor called" << std::endl;
+    std::cout << BLUE << "Dog Constructor called" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog &obj)
@@ -13,12 +13,12 @@ Dog::Dog(const Dog &obj)
     if(this == &obj)
         return;
     this->brain = new Brain(*(obj.brain));
-    std::cout << "Dog Copy Constructor called" << std::endl;
+    std::cout << BLUE << "Dog Copy Constructor called" << RESET << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << "Dog Destructor called" << std::endl;
+    std::cout << BLUE << "Dog Destructor called" << RESET << std::endl;
     delete this->brain;
 }
 
@@ -28,13 +28,13 @@ Dog& Dog::operator=(const Dog &obj) {
         delete this->brain;
         this->brain = new Brain(*(obj.brain));
     }
-    std::cout << "Dog Assignment Operator called" << std::endl;
+    std::cout << BLUE << "Dog Assignment Operator called" << RESET << std::endl;
     return *this;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "bow wow" << std::endl;
+    std::cout << BLUE << "bow wow" << RESET << std::endl;
 }
 
 std::string Dog::getBrainIdea(unsigned int index) const 
