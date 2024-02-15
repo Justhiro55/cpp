@@ -7,7 +7,7 @@ Animal::Animal()
 
 Animal::Animal(std::string type) : _type(type)
 {
-    std::cout << type << " Constructor called" << std::endl;
+    std::cout << "Animal Constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &obj)
@@ -40,9 +40,4 @@ std::string Animal::getType() const
 void Animal::setType(std::string type)
 {
     this->_type = type;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "(nothing...)" << std::endl;
 }
