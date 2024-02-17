@@ -2,11 +2,9 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal("Dog"), brain(new Brain())
 {
     std::cout << GREEN << "Cat Constructor called" << RESET << std::endl;
-	this->_type = "Cat";
-	this->brain = new Brain();
 }
 
 Cat::Cat(const Cat &obj)
