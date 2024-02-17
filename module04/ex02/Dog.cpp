@@ -24,7 +24,7 @@ Dog::~Dog()
 
 Dog& Dog::operator=(const Dog &obj) {
     if (this != &obj) {
-        Animal::operator=(obj); // この行を追加
+        Animal::operator=(obj);
         delete this->brain;
         this->brain = new Brain(*(obj.brain));
     }

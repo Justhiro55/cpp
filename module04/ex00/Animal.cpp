@@ -2,7 +2,7 @@
 
 Animal::Animal()
 {
-    std::cout << "Animal Constructor called" << std::endl;
+    std::cout << "Animal Default Constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
