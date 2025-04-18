@@ -13,6 +13,7 @@
 #include <vector>
 #include <deque>
 #include <list>
+#include <algorithm>
 
 // ----- color code -----
 #define RED "\033[31m"

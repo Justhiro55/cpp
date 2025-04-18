@@ -15,6 +15,7 @@
 #include <deque>
 #include <list>
 #include <algorithm>
+#include <stack>
 
 // ----- color code -----
 #define RED "\033[31m"
